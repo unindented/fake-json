@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "class": "Custom",
+  "arguments": [
+    {
+      "type": "string"
+    },
+    {
+      "type": "number"
+    }
+  ]
+}
