@@ -146,6 +146,10 @@ FakeJson.prototype['string'] = function (schema) {
     return new RandExp(schema.pattern).gen();
   }
 
+  if (schema.faker) {
+    return namespace(Faker, schema.faker)();
+  }
+
   var min = schema.minLength;
   var max = schema.maxLength;
   var str = namespace(Faker, 'lorem.words')(min).join(' ');
