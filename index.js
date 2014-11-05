@@ -66,18 +66,36 @@ FakeJson.prototype.generate = function (schema, depth) {
 FakeJson.prototype['array'] = function (schema, depth) {
   depth = depth || 0;
 
+  var range;
+  var min = schema.minItems;
+  var max = schema.maxItems;
+
+  min = (min != null ? min : 1);
+  max = (max != null ? max : (min + 5));
+
   if (_.isArray(schema.items)) {
-    return _.map(schema.items, function (item) {
+    var items = _.map(schema.items, function (item) {
       return this.generate(item, depth + 1);
     }, this);
-  }
-  else if (_.isObject(schema.items)) {
-    var min = schema.minItems;
-    var max = schema.maxItems;
 
-    var range = _.range(this.number({
-      minimum: (min != null ? min : 1),
-      maximum: (max != null ? max : 10)
+    if (schema.additionalItems) {
+      range = _.range(this.number({
+        minimum: Math.max(1, min - items.length),
+        maximum: Math.max(1, max - items.length)
+      }));
+
+      items.push.apply(items, _.map(range, function () {
+        return this.generate(schema.additionalItems, depth + 1);
+      }, this));
+    }
+
+    return items;
+  }
+
+  if (_.isObject(schema.items)) {
+    range = _.range(this.number({
+      minimum: min,
+      maximum: max
     }));
 
     return _.map(range, function () {
@@ -114,9 +132,12 @@ FakeJson.prototype['number'] = function (schema) {
   var xmin = schema.exclusiveMinimum;
   var xmax = schema.exclusiveMaximum;
 
+  min = (min != null ? min : 1) + (xmin ? 1 : 0);
+  max = (max != null ? max : (min + 5)) - (xmax ? 1 : 0);
+
   return namespace(Faker, 'random.number')({
-    min: (min != null ? min : 1)  + (xmin ? 1 : 0),
-    max: (max != null ? max : 10) - (xmax ? 1 : 0)
+    min: min,
+    max: max
   });
 };
 
