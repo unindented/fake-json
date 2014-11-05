@@ -1,7 +1,7 @@
 {
   "name":        "fake-json",
   "description": "Generate fake data based on a JSON schema.",
-  "version":     "0.0.2",
+  "version":     "0.0.3",
 
   "author": {
     "name":  "Daniel Perez Alvarez",
