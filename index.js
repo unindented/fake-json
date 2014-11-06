@@ -133,7 +133,7 @@ FakeJson.prototype['number'] = function (schema) {
   var xmax = schema.exclusiveMaximum;
 
   min = (min != null ? min : 1) + (xmin ? 1 : 0);
-  max = (max != null ? max : (min + 5)) - (xmax ? 1 : 0);
+  max = (max != null ? max : (min + 1e10)) - (xmax ? 1 : 0);
 
   return namespace(Faker, 'random.number')({
     min: min,
