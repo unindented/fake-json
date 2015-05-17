@@ -1,4 +1,4 @@
-# Fake JSON [![Build Status](https://secure.travis-ci.org/unindented/fake-json.png)](http://travis-ci.org/unindented/fake-json) [![Dependency Status](https://gemnasium.com/unindented/fake-json.png)](https://gemnasium.com/unindented/fake-json)
+# Fake JSON [![Build Status](https://img.shields.io/travis/unindented/fake-json.svg)](http://travis-ci.org/unindented/fake-json) [![Dependency Status](https://img.shields.io/gemnasium/unindented/fake-json.svg)](https://gemnasium.com/unindented/fake-json)
 
 Generate fake data based on a JSON schema.
 
