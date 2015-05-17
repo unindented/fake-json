@@ -26,13 +26,13 @@
   },
 
   "dependencies": {
-    "faker":   "~2.1.0",
-    "lodash":  "~2.4.1",
+    "faker":   "~2.1.3",
+    "lodash":  "~3.8.0",
     "randexp": "~0.4.0"
   },
 
   "devDependencies": {
-    "nodeunit": "^0.9.0",
-    "tv4":      "^1.1.4"
+    "nodeunit": "^0.9.1",
+    "tv4":      "^1.1.9"
   }
 }
