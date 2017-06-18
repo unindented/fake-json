@@ -1,4 +1,4 @@
-# Fake JSON [![Version](https://img.shields.io/npm/v/fake-json.svg)](https://www.npmjs.com/package/fake-json) [![Build Status](https://img.shields.io/travis/unindented/fake-json.svg)](http://travis-ci.org/unindented/fake-json) [![Dependency Status](https://img.shields.io/gemnasium/unindented/fake-json.svg)](https://gemnasium.com/unindented/fake-json) ![Abandoned](https://img.shields.io/badge/status-abandoned-red.svg)
+# Fake JSON [![Version](https://img.shields.io/npm/v/fake-json.svg)](https://www.npmjs.com/package/fake-json) [![Build Status](https://img.shields.io/travis/unindented/fake-json.svg)](http://travis-ci.org/unindented/fake-json) ![Abandoned](https://img.shields.io/badge/status-abandoned-red.svg)
 
 Generate fake data based on a JSON schema.
 
